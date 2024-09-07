@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.navBar {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.navBar li {
+  font-size: 18px;
+  padding: 10px 15px;
+  background-color: #00a9ff;
+  border-radius: 20px;
+  font-weight: 400;
+  color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.33);
+  font-weight: 500;
+}
+main {
+  background-color: #cdf5fd;
+  border-radius: 0% 0% 60% 62% / 0% 0% 17% 17%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+}
+.heading {
+  font-size: 32px;
+}
+header {
+  background-color: #cdf5fd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.appHead {
+  display: flex;
+  padding: 10px 0px 5px 20px;
+  gap: 20px;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  padding: 28px 28px 56px 28px;
+  gap: 12px;
+  color: rgb(67, 67, 67);
+}
+.aboutDetails {
+  margin-left: 28px;
+}
+.appName {
+  color: #00a9ff;
+}

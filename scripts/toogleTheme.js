@@ -3,6 +3,9 @@ import { enableLightMode } from "./toggleTheme/enableLightMode.js";
 
 let themeButton = document.querySelector(".theme");
 let theme = document.querySelector(".js-theme-icon");
+if (!localStorage.getItem("theme")) {
+  localStorage.setItem("theme", "light");
+}
 applyPreferedTheme();
 themeButton.addEventListener("click", () => {
   if (theme.innerHTML === "dark_mode") {

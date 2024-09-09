@@ -88,46 +88,7 @@ main {
   background-color: transparent;
   color: #03045e;
 }
-@media screen and (max-width: 1000px) {
-  .main-img {
-    display: none;
-  }
-}
-@media screen and (max-width: 700px) {
-  .navBar li {
-    font-size: 16px;
-  }
-  .heading {
-    font-size: 26px;
-  }
-  .contactUs {
-    display: none;
-  }
-  .navBar {
-    gap: 4px;
-  }
-  .appHead {
-    gap: 22px;
-    padding: 10px 0px 5px 8px;
-  }
-  main {
-    margin-top: 35px;
-    padding: 20px 20px 20px 20px;
-    font-size: 14px;
-    gap: 12px;
-  }
-  .about {
-    padding: 10px;
-    max-width: 90%;
-    font-size: 14px;
-    gap: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .signUp {
-    display: none;
-  }
-}
+
 .logo {
   color: #03045e;
   font-size: 40px;
@@ -186,4 +147,44 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 32px 40px;
+}
+@media screen and (max-width: 1000px) {
+  .main-img {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .navBar li {
+    font-size: 16px;
+  }
+  .heading {
+    font-size: 26px;
+  }
+  .contactUs {
+    display: none;
+  }
+  .navBar {
+    gap: 4px;
+  }
+  .appHead {
+    gap: 22px;
+    padding: 10px 0px 5px 8px;
+  }
+  main {
+    margin-top: 35px;
+    padding: 20px 20px 20px 20px;
+    font-size: 14px;
+    gap: 12px;
+  }
+  .about {
+    padding: 10px;
+    max-width: 90%;
+    font-size: 14px;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .signUp {
+    display: none;
+  }
 }

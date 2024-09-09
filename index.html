@@ -20,6 +20,10 @@
       name="keywords"
       content="expense tracker, finance management, budgeting, personal finance, money management"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <meta name="author" content="Abhinaba Santra" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -34,6 +38,11 @@
         </div>
         <nav>
           <ul class="navBar">
+            <li class="theme">
+              <span class="js-theme-icon material-symbols-outlined"
+                >dark_mode</span
+              >
+            </li>
             <li class="login"><a href="logipPage">Login</a></li>
             <li class="signUp"><a href="signUpPage">Sign-up</a></li>
             <li class="contactUs">Contact us</li>
@@ -108,5 +117,7 @@
         </span>
       </div>
     </footer>
+
+    <script type="module" src="scripts/toogleTheme.js"></script>
   </body>
 </html>

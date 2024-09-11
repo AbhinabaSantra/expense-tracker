@@ -31,7 +31,9 @@ body {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.33);
   font-weight: 500;
   text-wrap: nowrap;
+  padding-bottom: 8px;
 }
+
 .heading {
   font-size: 32px;
   text-wrap: nowrap;
@@ -43,7 +45,6 @@ header {
   justify-content: space-between;
   align-items: center;
   font-family: "Noto Sans", system-ui;
-
   z-index: 1;
 }
 .appHead {
@@ -88,8 +89,6 @@ main {
 }
 .main-img {
   padding: 16px 150px 0px 0px;
-}
-.learnMore {
 }
 .learnMoreContainer {
   display: inline-block;

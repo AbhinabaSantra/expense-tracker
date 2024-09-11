@@ -1,5 +1,5 @@
-import { enableDarkMode } from "./toggleTheme/enableDarkMode.js";
-import { enableLightMode } from "./toggleTheme/enableLightMode.js";
+import { enableDarkMode } from "./toggleThemeIndex/enableDarkModeIndex.js";
+import { enableLightMode } from "./toggleThemeIndex/enableLightModeIndex.js";
 
 let themeButton = document.querySelector(".theme");
 let theme = document.querySelector(".js-theme-icon");

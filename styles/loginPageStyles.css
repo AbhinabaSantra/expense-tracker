@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.themeIcon {
+  position: fixed;
+  top: 16px;
+  left: calc(100% - 50px);
+  font-size: 36px !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.401);
+  width: 290px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 20px 20px 20px 40px;
+  gap: 16px;
+}
+
+.input,
+.signUpSection,
+.head {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 90%;
+}
+.input {
+  margin-bottom: 16px;
+}
+.head {
+  position: relative;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.head::after {
+  content: "";
+  position: absolute;
+  top: 102%;
+  left: 12px;
+  background: linear-gradient(to right, #152588, #4c85dc);
+  height: 4px;
+  border-radius: 5px;
+  width: 50px;
+}
+
+input {
+  height: 30px;
+  width: 100%;
+  border: 0px;
+  padding-left: 7px;
+  margin-top: 20px;
+  margin-bottom: -1px;
+  font-size: 17px;
+  position: relative;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+.continue,
+.signUp {
+  background: linear-gradient(to right, #0e107d, #4b7dc8);
+  color: white;
+  border: 0px solid;
+  height: 35px;
+  border-radius: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+H3 {
+  font-size: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.underline {
+  height: 3px;
+  margin-top: -2px;
+  padding: 0px;
+  width: 0px;
+  background-color: #1b1fdc;
+  border-radius: 2px;
+  z-index: 2;
+}
+@keyframes borderAnimate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 103%;
+  }
+}
+input:focus + .underline {
+  animation: borderAnimate 0.7s forwards;
+}
+
+.signUpSection span {
+  font-size: 14px;
+  color: #353535;
+}
+.signUp a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+.theme {
+  cursor: pointer;
+}

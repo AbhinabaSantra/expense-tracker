@@ -65,6 +65,8 @@ export function enableDarkMode() {
 
   const themeButton = document.querySelector(".navBar .theme");
   themeButton.style.color = "#e0e0e0";
+  themeButton.style.backgroundColor = "transparent";
+  themeButton.style.border = "none";
 
   const contactUsButton = document.querySelector(".navBar .contactUs");
   if (contactUsButton) {

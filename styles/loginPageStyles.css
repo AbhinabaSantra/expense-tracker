@@ -146,8 +146,11 @@ input:focus + .underline {
   }
 }
 @media screen and (max-width: 500px) {
+  body {
+    padding: 25px;
+  }
   form {
-    width: 50vw;
-    height: 50vh;
+    width: 100%;
+    height: auto;
   }
 }

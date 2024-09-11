@@ -34,21 +34,30 @@
         <h3>Welcome Back</h3>
       </div>
       <div class="input">
-        <input type="text" placeholder="Enter Your Email" class="Email" />
+        <input
+          type="text"
+          placeholder="Enter Your Username"
+          class="userName"
+          autofocus
+        />
         <div class="underline"></div>
         <input type="password" placeholder="Enter Your Password" class="pass" />
         <div class="underline"></div>
-        <button class="continue">Continue</button>
+        <p class="message"></p>
+        <button class="continue" type="button">Continue</button>
       </div>
       <div class="signUpSection">
         <span>Don't have an account</span>
         <span>Create one here...</span>
-        <button class="signUp"><a href="signUpPage.html">Sign up</a></button>
+        <button class="signUp" type="button">
+          <a href="signUpPage.html">Sign up</a>
+        </button>
       </div>
     </form>
     <script
       type="module"
       src="themes/LoginPage/toogleThemeLoginPage.js"
     ></script>
+    <script src="scripts/loginPage.js"></script>
   </body>
 </html>

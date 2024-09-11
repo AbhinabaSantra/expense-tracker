@@ -135,3 +135,8 @@ input:focus + .underline {
 .theme {
   cursor: pointer;
 }
+.message {
+  color: red;
+
+  font-size: 14px;
+}

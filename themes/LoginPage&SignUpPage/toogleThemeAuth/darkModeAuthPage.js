@@ -14,7 +14,9 @@ export function enableDarkModeLoginPage() {
     item.style.borderBottom = "3px solid #444444";
   });
 
-  const signUpSpanElem = document.querySelectorAll(".signUpSection span");
+  const signUpSpanElem = document.querySelectorAll(
+    ".signUpSection span,.loginSection span"
+  );
   signUpSpanElem.forEach((span) => {
     span.style.color = "#aaaaaa";
   });

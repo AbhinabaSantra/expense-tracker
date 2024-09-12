@@ -11,10 +11,12 @@ export function enableLightModeLoginPage() {
   inputElem.forEach((item) => {
     item.style.backgroundColor = "#ffffff";
     item.style.color = "#000000";
-    item.style.borderBottom = "3px solid #bfbdbd";
+    item.style.borderBottom = "3px solid #888888";
   });
 
-  const signUpSpanElem = document.querySelectorAll(".signUpSection span");
+  const signUpSpanElem = document.querySelectorAll(
+    ".signUpSection span,.loginSection span"
+  );
   signUpSpanElem.forEach((span) => {
     span.style.color = "#353535";
   });

@@ -1,5 +1,3 @@
-localStorage.setItem("userList", JSON.stringify(["user1"]));
-localStorage.setItem("pass", JSON.stringify({ user1: "789456123" }));
 const continueElem = document.querySelector(".continue");
 if (continueElem) {
   continueElem.addEventListener("click", (event) => {
@@ -12,7 +10,7 @@ if (continueElem) {
   });
 }
 function verifyUser(userName, pass) {
-  const userList = JSON.parse(localStorage.getItem("userList"));
+  const userList = JSON.parse(localStorage.getItem("userList")) || [];
   console.log(userName);
   if (userList.includes(userName)) {
     checkPassValidity(userName, pass);
@@ -21,7 +19,7 @@ function verifyUser(userName, pass) {
   }
 }
 function checkPassValidity(userName, pass) {
-  const passSet = JSON.parse(localStorage.getItem("pass"));
+  const passSet = JSON.parse(localStorage.getItem("pass")) || {};
   if (passSet[userName] === pass) {
     window.location.href = "dashboard.html";
   } else {
@@ -32,9 +30,10 @@ function errorMessageRender(message) {
   const errorElem = document.querySelector(".message");
   errorElem.innerHTML = message;
   errorElem.style.margin = "10px 0px 0px 0px";
+  errorElem.style.color = "red";
 }
 document.querySelectorAll("input").forEach((elem) => {
-  elem.addEventListener("click", () => {
+  elem.addEventListener("focus", () => {
     const messageElem = document.querySelector(".message");
     if (messageElem.innerHTML !== "") {
       messageElem.innerHTML = "";

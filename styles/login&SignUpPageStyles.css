@@ -37,6 +37,7 @@ form {
 
 .input,
 .signUpSection,
+.loginSection,
 .head {
   display: flex;
   flex-direction: column;
@@ -77,7 +78,8 @@ input::placeholder {
   font-size: 16px;
 }
 .continue,
-.signUp {
+.signUp,
+.login {
   background: linear-gradient(to right, #0e107d, #4b7dc8);
   color: white;
   border: 0px solid;
@@ -122,11 +124,13 @@ input:focus + .underline {
   animation: borderAnimate 0.7s forwards;
 }
 
-.signUpSection span {
+.signUpSection span,
+.loginSection span {
   font-size: 14px;
   color: #353535;
 }
-.signUp a {
+.signUp a,
+.login a {
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -135,14 +139,13 @@ input:focus + .underline {
 .theme {
   cursor: pointer;
 }
-.message {
-  color: red;
-
+.message1,
+.message2 {
   font-size: 14px;
 }
 @media screen and (max-width: 700px) {
   body {
-    padding-top: 60px;
+    padding-top: 100px;
   }
   form {
     border: none;
@@ -151,7 +154,7 @@ input:focus + .underline {
 }
 @media screen and (max-width: 400px) {
   body {
-    padding-top: 100px;
+    padding-top: 60px;
     width: 100%;
     height: 100%;
   }

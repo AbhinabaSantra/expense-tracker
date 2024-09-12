@@ -32,7 +32,7 @@
 
     <form>
       <div class="head">
-        <h3>Welcome Back</h3>
+        <h3>Hello there</h3>
       </div>
       <div class="input">
         <input
@@ -42,21 +42,27 @@
           autofocus
         />
         <div class="underline"></div>
-
+        <p class="message1"></p>
         <input type="password" placeholder="Enter Your Password" class="pass" />
         <div class="underline"></div>
-        <p class="message"></p>
+        <input
+          type="text"
+          placeholder="Confirm Password"
+          class="confirm-pass"
+        />
+        <div class="underline"></div>
+        <p class="message2"></p>
         <button class="continue" type="button">Continue</button>
       </div>
-      <div class="signUpSection">
-        <span>Don't have an account</span>
-        <span>Create one here...</span>
+      <div class="loginSection">
+        <span>Already have an account</span>
+        <span>Login Here...</span>
         <button
-          class="signUp"
+          class="login"
           type="button"
-          onclick="window.location.href='signUpPage.html'"
+          onclick="window.location.href='loginPage.html'"
         >
-          <a href="signUpPage.html">Sign up</a>
+          <a href="loginPage.html">Login</a>
         </button>
       </div>
     </form>
@@ -64,6 +70,6 @@
       type="module"
       src="themes/LoginPage&SignUpPage/themeToggleAuth.js"
     ></script>
-    <script src="scripts/loginPage.js"></script>
+    <script src="scripts/signUpPage.js"></script>
   </body>
 </html>

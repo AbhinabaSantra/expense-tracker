@@ -1,4 +1,9 @@
 const continueElem = document.querySelector(".continue");
+
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+});
+
 if (continueElem) {
   continueElem.addEventListener("click", (event) => {
     let userNameInput = document.querySelector(".userName");
@@ -21,7 +26,7 @@ function verifyUser(userName, pass) {
 function checkPassValidity(userName, pass) {
   const passSet = JSON.parse(localStorage.getItem("pass")) || {};
   if (passSet[userName] === pass) {
-    window.location.href = "dashboard.html";
+    window.location.href = `dashboard.html?userName=${userName}`;
   } else {
     errorMessageRender("Incorrect password. Try again!!!");
   }

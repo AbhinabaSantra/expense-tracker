@@ -1,3 +1,5 @@
+import { userData } from "../data/userData.js";
+
 // Query selectors for elements
 const userNameInput = document.querySelector(".userName");
 const passInput = document.querySelector(".pass");
@@ -5,6 +7,10 @@ const confirmPass = document.querySelector(".confirm-pass");
 const continueButton = document.querySelector(".continue");
 const message1 = document.querySelector(".message1");
 const message2 = document.querySelector(".message2");
+
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+});
 
 // Utility function to render messages
 function renderMessage(element, message, color) {
@@ -59,8 +65,10 @@ function updateUserListAndPass(userList, passList) {
   passList[userNameInput.value] = passInput.value;
   localStorage.setItem("userList", JSON.stringify(userList));
   localStorage.setItem("pass", JSON.stringify(passList));
-  clearPage();
-  window.location.href = "dashboard.html";
+
+  userDataEntryCreation(userNameInput.value);
+
+  window.location.href = `userDataInit.html?userName=${userNameInput.value}`;
 }
 
 // Clear messages on focus for all inputs
@@ -70,12 +78,7 @@ document.querySelectorAll("input").forEach((elem) => {
   });
 });
 
-function clearPage() {
-  document.querySelector("form").reset();
-  renderMessage(message1, "", "");
-  renderMessage(message2, "", "");
-}
-//better method=>
+// better method=>
 // Reset form and clear messages when returning to the page via back button
 // window.addEventListener("pageshow", () => {
 //   form.reset(); // Reset all input fields
@@ -85,3 +88,13 @@ function clearPage() {
 userNameInput.addEventListener("focus", () => {
   renderMessage(message1, "", "");
 });
+
+//creating a new userData entry
+function userDataEntryCreation(username) {
+  userData[username] = {
+    income: 0,
+    expense: 0,
+    savings: 0,
+  };
+  localStorage.setItem("userData", JSON.stringify(userData));
+}

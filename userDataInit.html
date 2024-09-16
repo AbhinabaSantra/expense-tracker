@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Welcome back</title>
+    <title>User Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,35 +32,22 @@
 
     <form>
       <div class="head">
-        <h3>Welcome Back</h3>
+        <h3>Enter your details</h3>
       </div>
       <div class="input">
         <input
-          type="text"
-          placeholder="Enter Your Username"
-          class="userName"
+          type="number"
+          placeholder="Enter Your Income"
+          class="income"
           autofocus
         />
         <div class="underline"></div>
-
-        <input type="password" placeholder="Enter Your Password" class="pass" />
+        <input type="number" placeholder="Enter Your Savings" class="savings" />
         <div class="underline"></div>
-        <p class="message"></p>
         <button class="continue" type="button">Continue</button>
-      </div>
-      <div class="signUpSection">
-        <span>Don't have an account</span>
-        <span>Create one here...</span>
-        <button
-          class="signUp"
-          type="button"
-          onclick="window.location.href='signUpPage.html'"
-        >
-          <a href="signUpPage.html">Sign up</a>
-        </button>
       </div>
     </form>
     <script type="module" src="themes/Forms/themeToggleForm.js"></script>
-    <script src="scripts/loginPage.js"></script>
+    <script type="module" src="scripts/userDataInit.js"></script>
   </body>
 </html>

@@ -4,6 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DashBoard</title>
+    <link rel="stylesheet" href="styles/dashboard.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="dashboard-header">
+        <p class="appName">Expense Tracker Dashboard</p>
+        <p class="dateTime"></p>
+      </div>
+      <div class="profile">
+        <p class="userName"></p>
+        <img class="profile-pic" src="images/profile-pic.png" alt="profile" />
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <a class="dashboardLink"><li>Dashboard</li></a>
+        <a class="expenseLink"><li>Expense</li></a>
+        <a class="reportLink"><li>Report</li></a>
+        <a class="budgetLink"><li>Budget</li></a>
+      </ul>
+    </nav>
+    <main>
+      <p class="main-header">At a glance</p>
+      <p class="note">(Expense reset 1st of every Month)</p>
+      <div class="overview">
+        <div class="income">
+          <p class="title">Income</p>
+          <p class="incomeValue"></p>
+        </div>
+        <div class="expense">
+          <p class="title">Expense</p>
+          <p class="expenseValue"></p>
+        </div>
+        <div class="remain-budget">
+          <p class="title">Remaining</p>
+          <p class="remainValue"></p>
+        </div>
+        <div class="monthly-saving-target">
+          <p class="title">Monthly Savings</p>
+          <p class="savingsValue"></p>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script type="module" src="scripts/dashboard.js"></script>
+  </body>
 </html>

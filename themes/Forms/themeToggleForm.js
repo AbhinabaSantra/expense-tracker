@@ -1,5 +1,5 @@
-import { enableDarkModeLoginPage } from "./toogleThemeAuth/darkModeAuthPage.js";
-import { enableLightModeLoginPage } from "./toogleThemeAuth/lightModeAuthPage.js";
+import { enableDarkModeLoginPage } from "./toogleThemeForm/darkModeAuthPage.js";
+import { enableLightModeLoginPage } from "./toogleThemeForm/lightModeAuthPage.js";
 
 let themeButton = document.querySelector(".theme");
 let theme = document.querySelector(".js-theme-icon");

@@ -1,4 +1,5 @@
 import { userData } from "../data/userData.js";
+import { renderMessage } from "./utils/errorMessageRender.js";
 
 // Query selectors for elements
 const userNameInput = document.querySelector(".userName");
@@ -12,22 +13,15 @@ document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
 });
 
-// Utility function to render messages
-function renderMessage(element, message, color) {
-  element.innerHTML = message;
-  element.style.color = color;
-  element.style.margin = "10px 0px 0px 0px";
-}
-
 // Check username availability when focus is moved away from username input
 userNameInput.addEventListener("blur", () => {
   let userList = JSON.parse(localStorage.getItem("userList")) || [];
   if (userNameInput.value === "") {
-    renderMessage(message1, "", "");
+    renderMessage(message1, "", "", 0);
   } else if (userList.includes(userNameInput.value)) {
-    renderMessage(message1, "Username already exists", "red");
+    renderMessage(message1, "Username already exists", "red", 10);
   } else {
-    renderMessage(message1, "Username available", "green");
+    renderMessage(message1, "Username available", "green", 10);
   }
 });
 
@@ -39,19 +33,20 @@ function handleContinue() {
   let passList = JSON.parse(localStorage.getItem("pass")) || {};
 
   // Clear message1 and display result in message2 instead
-  renderMessage(message1, "", "");
+  renderMessage(message1, "", "", 0);
 
   if (userList.includes(userNameInput.value)) {
     renderMessage(
       message2,
       "Username already exists. Please choose another username.",
-      "red"
+      "red",
+      10
     );
     return;
   }
 
   if (passInput.value !== confirmPass.value) {
-    renderMessage(message2, "Passwords do not match", "red");
+    renderMessage(message2, "Passwords do not match", "red", 10);
     return;
   }
 
@@ -88,13 +83,3 @@ document.querySelectorAll("input").forEach((elem) => {
 userNameInput.addEventListener("focus", () => {
   renderMessage(message1, "", "");
 });
-
-//creating a new userData entry
-function userDataEntryCreation(username) {
-  userData[username] = {
-    income: 0,
-    expense: 0,
-    savings: 0,
-  };
-  localStorage.setItem("userData", JSON.stringify(userData));
-}

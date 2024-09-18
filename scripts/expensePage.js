@@ -1,9 +1,9 @@
+import { addSection } from "./ExpensePageScripts/AddSection.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
-import { userData } from "../data/userData.js";
 
 const dateTime = document.querySelector(".dateTime");
 const date = new dayjs();
-dateTime.innerHTML = `~ ${date.format("DD MMMM YYYY")}`;
+dateTime.innerHTML = `~ ${date.format("DD MMM YYYY")}`;
 
 const urlParams = new URLSearchParams(window.location.search);
 const userName = urlParams.get("userName");
@@ -19,12 +19,4 @@ document.querySelector(
 document.querySelector(".reportLink").href = `report.html?userName=${userName}`;
 document.querySelector(".budgetLink").href = `budget.html?userName=${userName}`;
 
-document.querySelector(".incomeValue").innerHTML = userData[userName].income;
-document.querySelector(".expenseValue").innerHTML =
-  userData[userName]["expense"];
-document.querySelector(".remainValue").innerHTML =
-  userData[userName]["income"] -
-  userData[userName]["expense"] -
-  userData[userName]["savings"];
-document.querySelector(".savingsValue").innerHTML =
-  userData[userName]["savings"];
+addSection(userName);

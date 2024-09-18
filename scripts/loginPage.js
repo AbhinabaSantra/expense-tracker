@@ -1,4 +1,7 @@
+import { renderMessage } from "./utils/errorMessageRender.js";
+
 const continueElem = document.querySelector(".continue");
+const errorElem = document.querySelector(".message");
 
 document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -20,7 +23,7 @@ function verifyUser(userName, pass) {
   if (userList.includes(userName)) {
     checkPassValidity(userName, pass);
   } else {
-    errorMessageRender("User not found. Please sign Up..");
+    renderMessage(errorElem, "User not found. Please sign Up..", "red", 10);
   }
 }
 function checkPassValidity(userName, pass) {
@@ -28,15 +31,10 @@ function checkPassValidity(userName, pass) {
   if (passSet[userName] === pass) {
     window.location.href = `dashboard.html?userName=${userName}`;
   } else {
-    errorMessageRender("Incorrect password. Try again!!!");
+    renderMessage(errorElem, "Incorrect password. Try again!!!", "red", 10);
   }
 }
-function errorMessageRender(message) {
-  const errorElem = document.querySelector(".message");
-  errorElem.innerHTML = message;
-  errorElem.style.margin = "10px 0px 0px 0px";
-  errorElem.style.color = "red";
-}
+
 document.querySelectorAll("input").forEach((elem) => {
   elem.addEventListener("focus", () => {
     const messageElem = document.querySelector(".message");

@@ -60,9 +60,7 @@ function updateUserListAndPass(userList, passList) {
   passList[userNameInput.value] = passInput.value;
   localStorage.setItem("userList", JSON.stringify(userList));
   localStorage.setItem("pass", JSON.stringify(passList));
-
   userDataEntryCreation(userNameInput.value);
-
   window.location.href = `userDataInit.html?userName=${userNameInput.value}`;
 }
 
@@ -83,3 +81,12 @@ document.querySelectorAll("input").forEach((elem) => {
 userNameInput.addEventListener("focus", () => {
   renderMessage(message1, "", "");
 });
+//creating a new userData entry
+function userDataEntryCreation(username) {
+  userData[username] = {
+    income: 0,
+    expense: 0,
+    savings: 0,
+  };
+  localStorage.setItem("userData", JSON.stringify(userData));
+}

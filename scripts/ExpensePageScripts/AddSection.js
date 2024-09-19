@@ -1,6 +1,6 @@
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { renderMessage } from "../utils/errorMessageRender.js";
-import { userData } from "../../data/userData.js";
+import { updateExpense } from "../utils/updateExpense.js";
 
 let expenseList = JSON.parse(localStorage.getItem("expenseList")) || {};
 const expenseCatagoryInput = document.querySelector(".expenseName");
@@ -18,7 +18,7 @@ export function addSection(userName) {
   document.querySelector(".addExpense").addEventListener("click", () => {
     const error = errorCheck();
     if (!error) {
-      databaseUpdates();
+      databaseUpdates(userName);
     }
   });
   document.querySelectorAll("input").forEach((input) => {
@@ -60,7 +60,7 @@ function databaseUpdates(userName) {
   // Create a new expense object
   const newExpense = [
     expenseCatagoryInput.value,
-    amountInput.value,
+    Number(amountInput.value),
     dateInput.value,
   ];
 
@@ -68,4 +68,5 @@ function databaseUpdates(userName) {
   userExpense.push(newExpense);
   localStorage.setItem("expenseList", JSON.stringify(expenseList));
   renderMessage(successMessage, "Expense Added 👍", "green", 12);
+  updateExpense(userName);
 }

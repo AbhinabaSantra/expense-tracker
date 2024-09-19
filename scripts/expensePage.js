@@ -1,5 +1,6 @@
 import { addSection } from "./ExpensePageScripts/AddSection.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+import { updateExpense } from "./ExpensePageScripts/updateExpense.js";
 
 const dateTime = document.querySelector(".dateTime");
 const date = new dayjs();

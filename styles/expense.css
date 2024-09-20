@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
-
+header {
+  width: 100%;
+}
 h2 {
   margin: 12px 0px 24px 0px;
 }
@@ -13,10 +16,11 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: #a1a1a1 solid 1px;
 }
 .div-header {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 16px;
 }
 .addNewExpense div {
@@ -47,8 +51,9 @@ input::-webkit-inner-spin-button {
   background-color: green;
   color: white;
   font-size: 16px;
-  font-weight: 400px;
+  font-weight: 400;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 .expenseNameError,
 .amountError {
@@ -62,3 +67,95 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   margin: 12px;
 }
+.prevExpense {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.deleteButton {
+  padding: 10px 12px;
+  background-color: black;
+  color: white;
+  border: solid 0px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.deleteButton span {
+  font-size: 22px;
+}
+.listItems {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr 1fr;
+
+  place-items: center;
+  padding: 6px;
+}
+.expenseNameList,
+.amountList,
+.dateList {
+  text-align: center;
+}
+.addExpense:hover {
+  background-color: #228b22;
+  border-color: #228b22;
+}
+
+.deleteButton:hover {
+  background-color: #333;
+}
+input:focus {
+  border-color: green;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+.listItems:nth-child(even) {
+  background-color: #f0f0f0;
+}
+.listItems:nth-child(odd) {
+  background-color: #dedede;
+}
+
+/* 
+@media (max-width: 600px) {
+  .side-navBar {
+    display: none;
+  }
+
+  .addNewExpense div {
+    grid-template-columns: 1fr;
+  }
+
+  input,
+  .addExpense {
+    width: 100%;
+  }
+
+  .listItems {
+    grid-template-columns: 1fr;
+    text-align: left;
+    margin: 12px 0;
+    padding: 12px;
+  }
+
+  .div-header {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .bottom-nav ul li a {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .expenseNameError,
+  .amountError,
+  .successMessage {
+    font-size: 14px;
+    text-align: center;
+  }
+} */

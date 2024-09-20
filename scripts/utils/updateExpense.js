@@ -1,9 +1,7 @@
-import { userData } from "../../data/userData.js";
-
 export function updateExpense(userName) {
   const expenseList = JSON.parse(localStorage.getItem("expenseList"));
   const userExpense = expenseList[userName];
-  let expense = userData[userName].expense;
+  let expense = 0;
   userExpense.forEach((element) => {
     expense += Number(element[1]);
   });

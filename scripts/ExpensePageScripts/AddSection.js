@@ -1,6 +1,7 @@
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { renderMessage } from "../utils/errorMessageRender.js";
 import { updateExpense } from "../utils/updateExpense.js";
+import { displayPrevExpense } from "./prevExpense.js";
 
 let expenseList = JSON.parse(localStorage.getItem("expenseList")) || {};
 const expenseCatagoryInput = document.querySelector(".expenseName");
@@ -25,6 +26,7 @@ export function addSection(userName) {
     input.addEventListener("focus", () => {
       expenseNameError.innerHTML = "";
       amountError.innerHTML = "";
+      successMessage.innerHTML = "";
     });
   });
 }
@@ -69,4 +71,5 @@ function databaseUpdates(userName) {
   localStorage.setItem("expenseList", JSON.stringify(expenseList));
   renderMessage(successMessage, "Expense Added 👍", "green", 12);
   updateExpense(userName);
+  displayPrevExpense(userName);
 }

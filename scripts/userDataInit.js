@@ -14,6 +14,5 @@ const userName = urlParams.get("userName");
 
 document.querySelector(".continue").addEventListener("click", () => {
   updateUserData(userName, incomeInput.value, 0, savingsInput.value);
-  console.log("in");
   window.location.href = `dashboard.html?userName=${userName}`;
 });

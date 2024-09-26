@@ -3,7 +3,6 @@ import { renderMessage } from "../utils/errorMessageRender.js";
 import { updateExpense } from "../utils/updateExpense.js";
 import { displayPrevExpense } from "./prevExpense.js";
 
-let expenseList = JSON.parse(localStorage.getItem("expenseList")) || {};
 const expenseCatagoryInput = document.querySelector(".expenseName");
 const amountInput = document.querySelector(".amount");
 const dateInput = document.querySelector(".date");
@@ -52,6 +51,7 @@ function errorCheck() {
 }
 
 function databaseUpdates(userName) {
+  let expenseList = JSON.parse(localStorage.getItem("expenseList")) || {};
   let userExpense = expenseList[userName];
 
   if (!userExpense) {

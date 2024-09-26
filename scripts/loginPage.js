@@ -19,7 +19,6 @@ if (continueElem) {
 }
 function verifyUser(userName, pass) {
   const userList = JSON.parse(localStorage.getItem("userList")) || [];
-  console.log(userName);
   if (userList.includes(userName)) {
     checkPassValidity(userName, pass);
   } else {

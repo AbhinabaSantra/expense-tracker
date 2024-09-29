@@ -147,3 +147,14 @@ input:focus {
 .dateList p {
   cursor: pointer;
 }
+.loadMore {
+  background-color: #228b22;
+  border: #228b22 solid 1px;
+  padding: 6px 16px;
+  border-radius: 18px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 12px 0px 48px 0px;
+}

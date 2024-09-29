@@ -7,7 +7,7 @@ export function sortDate(userName) {
       const userExpense = expenseList[userName] || [];
       if (userExpense.length === 0) return;
       const sortedUserExpense = userExpense.sort(
-        (a, b) => new Date(a[2]) - new Date(b[2])
+        (a, b) => new Date(a[3]) - new Date(b[3])
       );
       renderPrevExpenseHTML(sortedUserExpense, userName);
       applyEventListeners();
@@ -18,7 +18,7 @@ export function sortDate(userName) {
       const userExpense = expenseList[userName] || [];
       if (userExpense.length === 0) return;
       const sortedUserExpense = userExpense.sort(
-        (a, b) => new Date(b[2]) - new Date(a[2])
+        (a, b) => new Date(b[3]) - new Date(a[3])
       );
       renderPrevExpenseHTML(sortedUserExpense, userName);
       applyEventListeners();

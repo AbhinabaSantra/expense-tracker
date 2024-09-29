@@ -3,7 +3,7 @@ export function updateExpense(userName) {
   const userExpense = expenseList[userName];
   let expense = 0;
   userExpense.forEach((element) => {
-    expense += Number(element[1]);
+    expense += Number(element[2]);
   });
   const newUserData = JSON.parse(localStorage.getItem("userData"));
   newUserData[userName].expense = expense;

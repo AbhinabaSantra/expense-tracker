@@ -1,6 +1,7 @@
 import { addSection } from "./ExpensePageScripts/AddSection.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { displayPrevExpense } from "./ExpensePageScripts/prevExpense.js";
+import { loadMoreButton } from "./ExpensePageScripts/loadMoreButton.js";
 
 const dateTime = document.querySelector(".dateTime");
 const date = new dayjs();
@@ -22,3 +23,4 @@ document.querySelector(".budgetLink").href = `budget.html?userName=${userName}`;
 
 addSection(userName);
 displayPrevExpense(userName);
+loadMoreButton(userName);

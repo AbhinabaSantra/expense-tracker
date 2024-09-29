@@ -61,6 +61,7 @@ function databaseUpdates(userName) {
 
   // Create a new expense object
   const newExpense = [
+    Date.now(), //UID
     expenseCatagoryInput.value,
     Number(amountInput.value),
     dateInput.value,

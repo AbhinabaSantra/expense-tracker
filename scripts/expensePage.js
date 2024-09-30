@@ -18,8 +18,10 @@ document.querySelector(
 document.querySelector(
   ".expenseLink"
 ).href = `expense.html?userName=${userName}`;
-document.querySelector(".reportLink").href = `report.html?userName=${userName}`;
-document.querySelector(".budgetLink").href = `budget.html?userName=${userName}`;
+document.querySelector(
+  ".reportLink"
+).href = `analysis.html?userName=${userName}`;
+document.querySelector(".budgetLink").href = `modify.html?userName=${userName}`;
 
 addSection(userName);
 displayPrevExpense(userName);

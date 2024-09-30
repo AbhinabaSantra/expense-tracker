@@ -1,0 +1,36 @@
+<div style="width: 500px">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="module">
+  const ctx = document.getElementById("myChart");
+  ctx.style.height = "500px";
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [
+        {
+          label: "# of Votes",
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 2,
+          backgroundColor: "rgba(0, 150, 225,0.5)",
+          borderColor: "rgba(0, 100, 225,0.5)",
+          fill: {
+            target: "origin",
+            above: "rgba(100, 150, 225,0.5)", // Area will be red above the origin
+          },
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>

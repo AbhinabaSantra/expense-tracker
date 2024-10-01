@@ -1,36 +1,44 @@
-<div style="width: 500px">
-  <canvas id="myChart"></canvas>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <script>
+      const expenses = [
+        { amount: 50, date: "2024-09-30" },
+        { amount: 100, date: "2024-09-30" },
+        { amount: 200, date: "2024-08-01" },
+        { amount: 200, date: "2024-09-01" },
+        { amount: 200, date: "2024-09-25" },
+        { amount: 200, date: "2024-09-15" },
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        // more expenses...
+      ];
 
-<script type="module">
-  const ctx = document.getElementById("myChart");
-  ctx.style.height = "500px";
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [
-        {
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 2,
-          backgroundColor: "rgba(0, 150, 225,0.5)",
-          borderColor: "rgba(0, 100, 225,0.5)",
-          fill: {
-            target: "origin",
-            above: "rgba(100, 150, 225,0.5)", // Area will be red above the origin
-          },
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
-</script>
+      function getDailyExpenses() {
+        const dailyExpenses = Array(12).fill(0); // Initialize an array of 31 days with 0
+
+        expenses.forEach((expense) => {
+          const expenseDate = new Date(expense.date);
+          const month = expenseDate.getMonth() - 1; // Get day index (0-based)
+
+          const now = new Date();
+          if (expenseDate.getFullYear() === now.getFullYear()) {
+            dailyExpenses[month] += expense.amount; // Add expense amount to the corresponding day
+          }
+        });
+
+        return dailyExpenses; // Array of cumulative expenses per day
+      }
+
+      // Example usage
+      const dailyExpenses = getDailyExpenses();
+      console.log(dailyExpenses); // [0, 0, 50, ...] (up to 31 values)
+    </script>
+  </body>
+</html>

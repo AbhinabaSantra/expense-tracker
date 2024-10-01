@@ -92,7 +92,6 @@ header {
 }
 
 .bottom-nav {
-  height: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -147,4 +146,24 @@ main {
 }
 .main-header {
   font-size: 24px;
+}
+@media screen and (max-width: 600px) {
+  .userName {
+    display: none;
+  }
+
+  .appName {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .dashboard-header {
+    justify-content: center;
+    padding-left: 12px;
+  }
+  .side-navBar {
+    display: none;
+  }
+  .bottom-nav {
+    display: flex;
+  }
 }

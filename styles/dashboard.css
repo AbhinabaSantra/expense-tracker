@@ -22,7 +22,7 @@
   align-items: center; /* Centered content within sections */
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   gap: 10px;
 }
 
@@ -53,24 +53,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .userName {
-    display: none;
-  }
-
-  .appName {
-    font-size: 16px;
-    font-weight: 300;
-  }
-  .dashboard-header {
-    justify-content: center;
-    padding-left: 12px;
-  }
-  .side-navBar {
-    display: none;
-  }
-  .bottom-nav {
-    display: flex;
-  }
   .overview {
     grid-template-columns: 1fr 1fr; /* Adjust grid for smaller screens */
   }

@@ -158,3 +158,11 @@ input:focus {
   font-size: 15px;
   margin: 12px 0px 48px 0px;
 }
+@media screen and (max-width: 600px) {
+  .listItems {
+    font-size: 14px;
+  }
+  .loadMore {
+    margin-bottom: 96px;
+  }
+}

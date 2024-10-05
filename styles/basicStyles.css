@@ -74,10 +74,10 @@ header {
 
 .side-navBar ul a {
   text-decoration: none;
+  color: black;
 }
 
 .side-navBar ul li {
-  color: black;
   padding: 10px 20px;
   border-radius: 20px;
   display: flex;

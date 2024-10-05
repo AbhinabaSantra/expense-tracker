@@ -1,44 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis</title>
+    <link rel="stylesheet" href="styles/basicStyles.css" />
+    <link rel="stylesheet" href="styles/analysis.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
-    <script>
-      const expenses = [
-        { amount: 50, date: "2024-09-30" },
-        { amount: 100, date: "2024-09-30" },
-        { amount: 200, date: "2024-08-01" },
-        { amount: 200, date: "2024-09-01" },
-        { amount: 200, date: "2024-09-25" },
-        { amount: 200, date: "2024-09-15" },
-
-        // more expenses...
-      ];
-
-      function getDailyExpenses() {
-        const dailyExpenses = Array(12).fill(0); // Initialize an array of 31 days with 0
-
-        expenses.forEach((expense) => {
-          const expenseDate = new Date(expense.date);
-          const month = expenseDate.getMonth() - 1; // Get day index (0-based)
-
-          const now = new Date();
-          if (expenseDate.getFullYear() === now.getFullYear()) {
-            dailyExpenses[month] += expense.amount; // Add expense amount to the corresponding day
-          }
-        });
-
-        return dailyExpenses; // Array of cumulative expenses per day
-      }
-
-      // Example usage
-      const dailyExpenses = getDailyExpenses();
-      console.log(dailyExpenses); // [0, 0, 50, ...] (up to 31 values)
-    </script>
+    <header>
+      <div class="dashboard-header">
+        <p class="appName">Analysis</p>
+        <p class="dateTime"></p>
+      </div>
+      <div class="profile">
+        <p class="userName"></p>
+        <img class="profile-pic" src="images/profile-pic.png" alt="profile" />
+      </div>
+    </header>
+    <nav class="side-navBar">
+      <ul>
+        <a class="dashboardLink"><li>Dashboard</li></a>
+        <a class="expenseLink"><li>Expense</li></a>
+        <a class="reportLink"><li>Analysis</li></a>
+        <a class="budgetLink"><li>Modify</li></a>
+      </ul>
+    </nav>
+    <nav class="bottom-nav">
+      <ul>
+        <li>
+          <a class="dashboardLinkBottom"
+            ><i class="fas fa-home"></i> Dashboard</a
+          >
+        </li>
+        <li>
+          <a class="expenseLinkBottom"
+            ><i class="fas fa-chart-bar"></i> Expense</a
+          >
+        </li>
+        <li>
+          <a class="reportLinkBottom"
+            ><i class="fas fa-file-alt"></i> Analysis</a
+          >
+        </li>
+        <li>
+          <a class="budgetLinkBottom"><i class="fas fa-wallet"></i> Modify</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="lineChartDiv">
+        <canvas class="lineChart daily-chart"></canvas>
+      </div>
+      <div class="lineChartDiv">
+        <canvas class="lineChart monthly-chart"></canvas>
+      </div>
+      <div class="lineChartDiv">
+        <canvas class="lineChart annual-chart"></canvas>
+      </div>
+      <canvas class="doughnutChart expense-chart"></canvas>
+    </main>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="scripts/analysis.js"></script>
   </body>
 </html>

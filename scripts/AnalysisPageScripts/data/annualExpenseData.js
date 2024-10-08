@@ -1,6 +1,6 @@
 export function annualExpenseData(userName) {
-  const expenseList = JSON.parse(localStorage.getItem("expenseList"));
-  const userExpense = expenseList[userName];
+  const expenseList = JSON.parse(localStorage.getItem("expenseList")) || {};
+  const userExpense = expenseList[userName] || {};
 
   const annualExpenseList = {};
 

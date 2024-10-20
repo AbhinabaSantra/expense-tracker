@@ -1,0 +1,90 @@
+.budgetLink li {
+  background-color: #152588;
+  color: #ffffff;
+}
+.modify-data,
+.preferences {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+  padding: 0px 24px 24px 24px;
+}
+
+.modify-data {
+  border-bottom: 1px solid #999999;
+}
+
+.update-header,
+.preference-header {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-wrap: wrap;
+  text-align: center;
+}
+.incomeUpdate,
+.savingsUpdate {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.incomeUpdate input,
+.savingsUpdate input {
+  font-size: 16px;
+  padding: 6px 16px;
+  border-radius: 18px;
+  border: 1px solid #959595;
+  width: 100%;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  display: none;
+}
+.incomeUpdate input:focus,
+.savingsUpdate input:focus {
+  outline: none;
+  border: 1px solid green;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+.updateButton,
+.preferenceButton {
+  padding: 8px 36px;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background-color: green;
+  border: 1px solid green;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.updateButton:hover,
+.preferenceButton:hover {
+  background-color: #066d00;
+}
+
+.preference-description {
+  color: #000000;
+  font-size: 14px;
+}
+
+.preferenceUpdate {
+  display: flex;
+  gap: 40px;
+  margin: 12px 0px 0px 0px;
+}
+
+.monthlyPreference,
+.annualPreference {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

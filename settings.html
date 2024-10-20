@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Analysis</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="styles/basicStyles.css" />
-    <link rel="stylesheet" href="styles/analysis.css" />
+    <link rel="stylesheet" href="styles/settings.css" />
 
     <link
       rel="stylesheet"
@@ -15,7 +15,7 @@
   <body>
     <header>
       <div class="dashboard-header">
-        <p class="appName">Analysis</p>
+        <p class="appName">Settings</p>
         <p class="dateTime"></p>
       </div>
       <div class="profile">
@@ -56,18 +56,44 @@
       </ul>
     </nav>
     <main>
-      <div class="lineChartDiv">
-        <canvas class="lineChart daily-chart"></canvas>
+      <div class="modify-data">
+        <p class="update-header">
+          Update Income and Savings
+        </p>
+        <div class="incomeUpdate">
+          <label>Income:</label>
+          <input type="number" class="incomeInput">
+        </div>
+        <div class="savingsUpdate">
+          <label>Savings:</label>
+          <input type="number" class="savingsInput">
+        </div>
+        <p class="errorMessage"></p>
+        <button class="updateButton">Update</button>
       </div>
-      <div class="lineChartDiv">
-        <canvas class="lineChart monthly-chart"></canvas>
-      </div>
-      <div class="lineChartDiv">
-        <canvas class="lineChart annual-chart"></canvas>
+      <div class="preferences">
+        <p class="preference-header">
+          Data View Preference
+        </p>
+        <p class="preference-description">
+          How would u like to see your data ?
+        </p>
+        <div class="preferenceUpdate">
+          <div class="monthlyPreference">
+            <label for="Monthly">Monthly</label>
+            <input type="radio" id="Monthly" class="monthlyPreferenceInput" name="preferenceRadio" checked value="monthly">
+          </div>
+          <div class="annualPreference">
+            <label for="Anually">Anually</label>
+            <input type="radio" id="Anually" class="annualPreferenceInput" name="preferenceRadio" value="annual">
+          </div>
+        </div>
+        <p class="errorMessage"></p>
+        <button class="preferenceButton">Save</button>
       </div>
     </main>
     <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="scripts/analysis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="scripts/settings.js"></script>
   </body>
 </html>
